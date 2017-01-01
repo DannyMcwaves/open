@@ -84,7 +84,7 @@ class Csv(OpenInterface):
         :return:
         """
         for i in range(len(self)):
-            yield self.pdf_file_read.getPage(i).extractText()
+            yield self.file
 
     def __radd__(self, other):
         """
