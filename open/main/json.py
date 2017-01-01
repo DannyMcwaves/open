@@ -17,7 +17,7 @@ class Json(OpenInterface):
         """the reader for pdf"""
 
     def __len__(self):
-        return self.pdf_file_read.getNumPages()
+        return self.file
 
     def __add__(self, other):
         """

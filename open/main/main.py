@@ -10,5 +10,5 @@ print(isinstance(Pdf, pdf))
 
 print(pdf[-5])
 
-# for i in pdf:
-#     print(i)
+for i in pdf:
+    print(i)
