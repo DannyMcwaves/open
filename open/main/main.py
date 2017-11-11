@@ -3,5 +3,12 @@ from open.main.variables import PDF_DATA
 
 pdf = Pdf(PDF_DATA, 'rb')
 pdf2 = Pdf(open(PDF_DATA, 'rb'))
-print(pdf.file)
-print(pdf2.file)
+
+print(len(pdf))
+print(bool(pdf2))
+print(isinstance(Pdf, pdf))
+
+print(pdf[-5])
+
+# for i in pdf:
+#     print(i)
