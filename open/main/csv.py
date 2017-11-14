@@ -13,6 +13,23 @@ class Csv(OpenInterface):
     def __init__(self, file):
         super(Csv, self).__init__(file)
 
+    def __repr__(self):
+        """
+        :return:
+        """
+        return str(self)
+
+    def __copy__(self):
+        """
+        :return:
+        """
+
+    def __deepcopy__(self, memodict={}):
+        """
+        :param memodict:
+        :return:
+        """
+
     def read(self):
         """the reader for pdf"""
 

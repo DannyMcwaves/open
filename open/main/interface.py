@@ -139,6 +139,7 @@ class OpenInterface(ABC):
         :return: boolean
         """
 
+    @abstractmethod
     def __repr__(self):
         """
         string representation of the object class.
@@ -153,12 +154,14 @@ class OpenInterface(ABC):
         :return: boolean
         """
 
+    @abstractmethod
     def __copy__(self):
         """
         shallow copy the content of the file object.
         :return: shallow copy object
         """
 
+    @abstractmethod
     def __deepcopy__(self, memodict={}):
         """
         return deep copy of the file object content.

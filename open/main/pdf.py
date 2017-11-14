@@ -17,6 +17,23 @@ class Pdf(OpenInterface):
         super(Pdf, self).__init__(file, action)
         self.pdf_file_read = PyPDF2.PdfFileReader(self.file)
 
+    def __repr__(self):
+        """
+        :return:
+        """
+        return str(self)
+
+    def __copy__(self):
+        """
+        :return:
+        """
+
+    def __deepcopy__(self, memodict={}):
+        """
+        :param memodict:
+        :return:
+        """
+
     def read(self):
         """the reader for pdf"""
 
