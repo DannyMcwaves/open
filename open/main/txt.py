@@ -14,9 +14,10 @@ class Text(OpenInterface):
 
     def read(self):
         """the reader for pdf"""
+        return self.file.readlines()
 
     def __len__(self):
-        return self.file
+        return len(self.read())
 
     def __add__(self, other):
         """
