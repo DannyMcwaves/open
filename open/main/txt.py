@@ -5,18 +5,20 @@ read, write and create text file
 __all__ = ['Text']
 
 from .interface import OpenInterface
+from .variables import READ_WRITE
 
 
 class Text(OpenInterface):
 
-    def __init__(self, file):
-        super(Text, self).__init__(file)
+    def __init__(self, file, action=READ_WRITE):
+        super(Text, self).__init__(file, action)
+        self.text_file_read = self.file.readlines()
 
     def __repr__(self):
         """
         :return:
         """
-        return "Text"
+        return '<{0} file="{1}" mode="{2}">'.format(self.__class__.__name__, self.file.name, self.file.mode)
 
     def __copy__(self):
         """
@@ -31,10 +33,10 @@ class Text(OpenInterface):
 
     def read(self):
         """the reader for pdf"""
-        return self.file.readlines()
+        return "".join(self.text_file_read)
 
     def __len__(self):
-        return len(self.read())
+        return len(self.text_file_read)
 
     def __add__(self, other):
         """
@@ -81,7 +83,7 @@ class Text(OpenInterface):
         """
         if type(item) != int or item > len(self) or item < 0:
             return NotImplemented
-        return self.file
+        return self.text_file_read[item]
 
     def __iadd__(self, other):
         """
@@ -100,8 +102,7 @@ class Text(OpenInterface):
         """
         :return:
         """
-        for i in range(len(self)):
-            yield self.file
+        yield from self.text_file_read
 
     def __radd__(self, other):
         """
