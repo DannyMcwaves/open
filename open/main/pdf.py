@@ -19,9 +19,9 @@ class Pdf(OpenInterface):
 
     def __repr__(self):
         """
-        :return:
+        :return: class name and file name.
         """
-        return str(self)
+        return '<{0} file="{1}" mode="{2}">'.format(self.__class__.__name__, self.file.name, self.file.mode)
 
     def __copy__(self):
         """
@@ -36,6 +36,10 @@ class Pdf(OpenInterface):
 
     def read(self):
         """the reader for pdf"""
+        data = ""
+        for i in self:
+            data += i
+        return data
 
     def __len__(self):
         return self.pdf_file_read.getNumPages()
@@ -58,6 +62,7 @@ class Pdf(OpenInterface):
         :param kwargs:
         :return:
         """
+        return self.read()
 
     def __contains__(self, item):
         """
