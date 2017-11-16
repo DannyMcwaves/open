@@ -5,6 +5,9 @@ csv = Csv(CSV_DATA)
 print(csv)
 print(len(csv))
 print(csv[0])
-# csv()
+csv()
+
 for i in csv:
     print(i)
+
+print(csv.read())
