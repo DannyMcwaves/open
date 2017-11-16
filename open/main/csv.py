@@ -37,6 +37,7 @@ class Csv(OpenInterface):
 
     def read(self):
         """the reader for pdf"""
+        return self.CONTAINER
 
     def __len__(self):
         return len(self.CONTAINER)
@@ -57,7 +58,7 @@ class Csv(OpenInterface):
         """
         :param args:
         :param kwargs:
-        :return:
+        :return: None
         """
         for i in self.CONTAINER:
             print(i)
