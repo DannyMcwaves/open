@@ -10,14 +10,19 @@ from .interface import OpenInterface
 
 class Csv(OpenInterface):
 
+    CONTAINER = []
+
     def __init__(self, file):
         super(Csv, self).__init__(file)
+        self.csv_file_reader = csv.reader(self.file, delimiter=' ', quotechar='|')
+        for i in self:
+            self.CONTAINER.append(i)
 
     def __repr__(self):
         """
         :return:
         """
-        return str(self)
+        return '<{0} file="{1}" mode="{2}">'.format(self.__class__.__name__, self.file.name, self.file.mode)
 
     def __copy__(self):
         """
@@ -34,7 +39,7 @@ class Csv(OpenInterface):
         """the reader for pdf"""
 
     def __len__(self):
-        return self.file
+        return len(self.CONTAINER)
 
     def __add__(self, other):
         """
@@ -54,6 +59,8 @@ class Csv(OpenInterface):
         :param kwargs:
         :return:
         """
+        for i in self.CONTAINER:
+            print(i)
 
     def __contains__(self, item):
         """
@@ -81,7 +88,7 @@ class Csv(OpenInterface):
         """
         if type(item) != int or item > len(self) or item < 0:
             return NotImplemented
-        return None
+        return self.CONTAINER[item]
 
     def __iadd__(self, other):
         """
@@ -100,8 +107,7 @@ class Csv(OpenInterface):
         """
         :return:
         """
-        for i in range(len(self)):
-            yield self.file
+        yield from self.csv_file_reader
 
     def __radd__(self, other):
         """
