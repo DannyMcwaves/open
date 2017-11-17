@@ -12,12 +12,13 @@ class Json(OpenInterface):
 
     def __init__(self, file):
         super(Json, self).__init__(file)
+        self.json_read_file = json.load(self.file, encoding='utf-8')
 
     def __repr__(self):
         """
         :return:
         """
-        return str(self)
+        return '<{0} file="{1}" mode="{2}">'.format(self.__class__.__name__, self.file.name, self.file.mode)
 
     def __copy__(self):
         """
@@ -32,6 +33,7 @@ class Json(OpenInterface):
 
     def read(self):
         """the reader for pdf"""
+        return self.json_read_file
 
     def __len__(self):
         return self.file
