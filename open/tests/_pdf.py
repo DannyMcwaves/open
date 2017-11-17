@@ -1,5 +1,5 @@
 from open.main.pdf import Pdf
-from open.main.variables import PDF_DATA, TXT_DATA
+from open.main.variables import PDF_DATA
 
 pdf = Pdf(PDF_DATA)
 pdf2 = Pdf(open(PDF_DATA, 'rb'))
