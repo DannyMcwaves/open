@@ -1,11 +1,12 @@
 
-__all__ = ['PDF_DATA', 'CSV_DATA', 'TXT_DATA', 'JSON_DATA']
+__all__ = ['PDF_DATA', 'CSV_DATA', 'TXT_DATA', 'JSON_DATA', 'JSON_DATA2']
 
 # sample read write data
 PDF_DATA = '../data/pdf-sample.pdf'
 CSV_DATA = '../data/csv-sample.csv'
 TXT_DATA = '../data/text-sample.txt'
 JSON_DATA = '../data/companies.json'
+JSON_DATA2 = '../data/zips.json'
 
 # open modes.
 READ_ONLY = 'r'
