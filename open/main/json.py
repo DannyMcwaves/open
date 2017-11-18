@@ -1,5 +1,5 @@
 """
-read, write and create json files
+Read, write and create json files
 """
 
 __all__ = ['Json']
@@ -12,7 +12,14 @@ class Json(OpenInterface):
 
     def __init__(self, file):
         super(Json, self).__init__(file)
-        self.json_read_file = json.load(self.file, encoding='utf-8')
+        mode = self.file.mode
+        try:
+            self.json_read_file = json.load(self.file)
+            self.file.close()
+        except json.JSONDecodeError:
+            self.file = open(file, mode)
+            read = self.file.readlines()
+            self.json_read_file = [json.loads(x.strip()) for x in read]
 
     def __repr__(self):
         """
@@ -36,7 +43,7 @@ class Json(OpenInterface):
         return self.json_read_file
 
     def __len__(self):
-        return self.file
+        return len(self.json_read_file)
 
     def __add__(self, other):
         """
@@ -102,8 +109,7 @@ class Json(OpenInterface):
         """
         :return:
         """
-        for i in range(len(self)):
-            yield self.file
+        yield from self.json_read_file
 
     def __radd__(self, other):
         """
