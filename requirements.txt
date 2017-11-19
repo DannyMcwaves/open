@@ -22,6 +22,7 @@ gTTS-token==1.1.1
 hyperlink==17.3.1
 idna==2.6
 image==1.5.16
+magic==0.4.13
 incremental==17.5.0
 jdcal==1.3
 Kivy==1.10.0
