@@ -1,6 +1,5 @@
-from open.main.json import Json
-from open.main.variables import JSON_DATA, JSON_DATA2
-import json as js
+from open import Json
+from open import JSON_DATA, JSON_DATA2
 
 json = Json(JSON_DATA)
 print(json)
