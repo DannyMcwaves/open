@@ -1,5 +1,7 @@
-from open.main.csv import Csv
-from open.main.variables import CSV_DATA
+from open import Csv
+from open import CSV_DATA
+
+print(CSV_DATA)
 
 csv = Csv(CSV_DATA)
 print(csv)
