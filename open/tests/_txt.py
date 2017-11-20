@@ -1,5 +1,5 @@
-from open.main.variables import TXT_DATA
-from open.main.txt import Text
+from open import TXT_DATA
+from open import Text
 
 text = Text(TXT_DATA)
 
