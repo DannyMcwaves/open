@@ -3,7 +3,7 @@ this is the main interface to the main package that contains several utility fun
 different parts for the package and has the main export interface for the main package
 """
 
-__all__ = ['opener', 'Json', 'Pdf', 'Csv', 'Text', 'JSON_DATA', 'PDF_DATA', 'XML_DATA', 'CSV_DATA', 'TXT_DATA']
+__all__ = ['opener', 'Json', 'Pdf', 'Csv', 'Text', 'JSON_DATA', 'PDF_DATA', 'XML_DATA', 'CSV_DATA', 'TXT_DATA', 'JSON_DATA2']
 
 import mimetypes
 import logging
@@ -11,7 +11,7 @@ from .json import Json
 from .pdf import Pdf
 from .csv import Csv
 from .txt import Text
-from open.main.variables import JSON_DATA, PDF_DATA, CSV_DATA, TXT_DATA, XML_DATA
+from .variables import JSON_DATA, PDF_DATA, CSV_DATA, TXT_DATA, XML_DATA, JSON_DATA2
 
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,6 +23,7 @@ mimes = {
     'text/plain': Text
 }
 
+# disable all logs
 logging.disable(logging.CRITICAL)
 
 
