@@ -43,6 +43,9 @@ class Text(OpenInterface):
         :param other:
         :return:
         """
+        with self.file as file:
+            file.write(other)
+        return True
 
     def __bool__(self):
         """
@@ -110,7 +113,8 @@ class Text(OpenInterface):
         :return:
         """
 
-    def write(self):
+    def write(self, text):
         """
         :return:
         """
+        self.file.write(text)
