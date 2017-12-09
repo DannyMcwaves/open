@@ -24,3 +24,5 @@ version incompatibilities.
 anyone.
  Compact PDF files are smaller than their source files and download a
 page at a time for fast display on the Web.
+
+this is more information that i want to append to the end of the file.
