@@ -49,7 +49,7 @@ class OpenInterface(ABC):
         """this official read format for files"""
 
     @abstractmethod
-    def write(self):
+    def write(self, text):
         """write formats for data"""
 
     @abstractmethod
