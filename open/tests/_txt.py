@@ -10,3 +10,10 @@ print(text.read())
 print(text[1])
 for i in text:
     print(i)
+
+data = '''
+this is more information that i want to append to the end of the file.
+'''
+
+state = text + data
+print(state)
